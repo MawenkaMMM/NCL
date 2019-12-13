@@ -1,9 +1,14 @@
-Feature: Gmail Login
-  As a user I should able to login into Gmail.
+Feature: NCL homepage
 
-  Scenario: I login with valid credential
-    Given I navigate to "http://the-internet.herokuapp.com/login"
-    And I enter "tomsmith" into input field having id "username"
-    And I enter "SuperSecretPassword!" into input field having id "password"
-    When I click on element having class "radius"
-    Then I wait 5 seconds for element having css "a[href='/logout']" to display
+  Scenario: Guests filters shore excursion result using price range
+    // URL:https://www.ncl.com/
+    //Price range:$0-$30
+    
+    Givena a Guest
+
+    And I am on the homepage
+    And navigated to Shore Excursion page
+    And I click find excursion
+    And Shore Excursion page is present
+    When price range is filtered to $0-$30
+    Then Only shore excursions within range are displayed

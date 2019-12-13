@@ -7,6 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		dryRun=true,
 		plugin = {"html:target/cucumberHtmlReport"},
 		//pretty:target/cucumber-json-report.json
 		features = "classpath:features",
